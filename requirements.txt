@@ -1,0 +1,6 @@
+streamlit
+pydub
+requests
+pandas
+openpyxl
+ffmpeg
