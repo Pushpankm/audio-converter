@@ -59,7 +59,7 @@ if option == "🔗 Convert via URL":
     url = st.text_input("Enter WAV (GSM encoded) audio URL:")
     filename = st.text_input("Enter filename to save as (without extension):", value="audio1")
 
-    if st.button("🎯 Convert"):
+    if st.button("🎯 Convert and Play"):
         if url:
             st.info("Converting...")
             result = download_and_convert(url, filename)
