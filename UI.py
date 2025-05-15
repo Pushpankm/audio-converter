@@ -10,9 +10,9 @@ import pandas as pd
 AudioSegment.converter = which("ffmpeg")
 AudioSegment.ffprobe = which("ffprobe")
 
-st.set_page_config(page_title="Call Recording", page_icon="🎧")
+st.set_page_config(page_title="GSM Encoded WAV to PCM WAV Converter", page_icon="🎧")
 
-st.title("🎧 GSM Encoded WAV to PCM WAV Converter")
+st.title("🎧 Call Recording ")
 st.caption("")
 
 # Create output folder
