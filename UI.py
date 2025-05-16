@@ -66,9 +66,6 @@ def download_and_convert_mp3(url, filename):
     except Exception as e:
         return None, str(e)
 
-# ✅ Fix: Replace deprecated function
-params = st.query_params
-
 # Streamlit App
 with track():
     converter_choice = st.radio("Choose Converter:", ["WAV to MP3 Converter", "WAV to PCM Converter"])
