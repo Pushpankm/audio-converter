@@ -1,16 +1,20 @@
-# analytics_dashboard.py
 import streamlit as st
 import json
 
+# Secret Key
 SECRET_ACCESS = "developer123"
 
-query_params = st.experimental_get_query_params()
+# ✅ Use the new query param method
+query_params = st.query_params
 if query_params.get("analytics", [""])[0] != SECRET_ACCESS:
-    st.stop()
+    st.stop()  # Stop if unauthorized
 
+# Page config
 st.set_page_config(page_title="Usage Analytics", layout="centered")
+
 st.title("🔍 Custom Analytics Dashboard")
 
+# Sample simulated analytics data (replace this with your file read if needed)
 analytics_data = {
     "Choose Converter:": {
         "WAV to MP3 Converter": 10,
@@ -31,6 +35,7 @@ analytics_data = {
     "Upload CSV or Excel file": 0
 }
 
+# Tracking Stats
 stats = {
     "Pageviews": 6,
     "Script runs": 10,
@@ -38,6 +43,9 @@ stats = {
     "Since": "16 May 2025, 11:02:19"
 }
 
+# ---------------------------
+# UI Layout
+# ---------------------------
 st.subheader("📊 Summary")
 st.markdown(f"""
 - **Pageviews:** `{stats['Pageviews']}`
@@ -47,6 +55,7 @@ st.markdown(f"""
 """)
 
 st.divider()
+
 st.subheader("🧠 Widget Interactions")
 
 for widget, data in analytics_data.items():
@@ -54,4 +63,5 @@ for widget, data in analytics_data.items():
         for key, count in data.items():
             st.markdown(f"- **{key}**: `{count}` times")
 
+# Info note
 st.warning("🚧 This dashboard is only visible to you. Don't share your secret key!", icon="🔐")
